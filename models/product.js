@@ -75,6 +75,10 @@ const productSchema = new mongoose.Schema(
       max: 5,
       default: 0,
     },
+    isAddedToCart: {
+      type: Boolean,
+      default: false,
+    },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User", // Assuming the User model exists
