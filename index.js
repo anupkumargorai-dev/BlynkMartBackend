@@ -1,9 +1,8 @@
 import express from "express";
 const app = express();
 
-const port = 1010;
+const port = 4006;
 import mongoose from "mongoose";
-const MONGOOSE_URL = "mongodb://127.0.0.1:27017/blynkmart";
 import path from "path";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -19,6 +18,7 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+const MONGOOSE_URL = process.env.MONGODB_URI
 
 main()
   .then(() => {
