@@ -5,17 +5,18 @@ const Schema = mongoose.Schema;
 
 // Address schema
 const addressSchema = new Schema({
-  city: { type: String, required: true, default: null },
-  pincode: { type: String, required: true, default: null },
-  district: { type: String, required: true, default: null },
-  state: { type: String, required: true, default: null },
-  nearbyLocation: { type: String, required: true, default: null },
-  buildingName: { type: String, required: true, default: null },
-  houseNumber: { type: String, required: true, default: null },
-  isOffice: { type: Boolean, default: false, default: null },
-  isHome: { type: Boolean, default: false, default: null },
-  mobileNumber: { type: String, required: true, default: null },
+  fullName: { type: String, default: null },
+  city: { type: String, default: null },
+  pinCode: { type: String, default: null }, // changed from `pincode`
+  district: { type: String, default: null },
+  state: { type: String, default: null },
+  addressLine1: { type: String, default: null },
+  addressLine2: { type: String, default: null },
+  landmark: { type: String, default: null },
+  addressType: { type: String, enum: ['Home', 'Office', 'Other'], default: 'Home' },
+  mobileNumber: { type: String, default: null },
 });
+
 
 const userSchema = new Schema({
   name: { type: String, required: false, default: null },
